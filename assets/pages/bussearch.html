@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>RegBus</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/stylesheet.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../fonts/all.css" />
+	</head>
+	<body class="SearchPageColor">
+		<!-- header -->
+		<header class="SearchPageColor">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="topnav" id="myTopnav">
+							<a href="#home" class="active">Home</a>
+
+							<a href="#contact">Contact</a>
+							<a href="#about">About</a>
+							<a href="../../index.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+							<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+								<i class="fa fa-bars"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- bus search session -->
+		<section class="SearchImage">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="FromToBoxBlack Center">
+							<h1>Search you Destination here!...</h1>
+
+							<div class="FromToBox">
+								<form action="">
+									<div class="row">
+										<div class="col-xl-4 mt-3 mb-3">
+											<!-- <label for="" class="form-label">To</label> -->
+											<select name="from" id="from" class="InputHeigth form-control" required>
+												<option value="From">From</option>
+												<option value="Chandigarh">Chandigarh</option>
+												<option value="Delhi">Assam</option>
+											</select>
+
+											<!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+										</div>
+										<div class="col-xl-4 mt-3 mb-3">
+											<!-- <label for="" class="form-label">To</label> -->
+											<select name="form" id="to" class="InputHeigth form-control" required>
+												<option value="Destination">Destination</option>
+												<option value="Delhi">Delhi</option>
+												<option value="Shimla">Shimla</option>
+												<option value="Himachal">Himachal</option>
+												<option value="Uttarakhand">Uttrakhand</option>
+											</select>
+
+											<!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+										</div>
+										<div class="col-xl-2 mt-3 mb-3">
+											<input type="date" id="date" class="InputHeigth form-control" required />
+										</div>
+										<div class="col-xl-2 mt-3 mb-3">
+											<button
+												type="button"
+												class="btn btn-primary FromToButton"
+												onclick="searchbuses()"
+											>
+												<i class="fa fa-search" aria-hidden="true"></i> Search Bus
+											</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- add data -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- list session -->
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="clo-xl-12">
+						<div class="ListBox">
+							<div class="mb-3">
+								<h3 class="Center H3LineHight">List of Busses Available</h3>
+							</div>
+							<div class="mb-3">
+								<hr />
+							</div>
+							<div class="mb-3" id="buslist"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- <footer class="container SearchPageColor">
+			<div class="py-3 my-4">
+				<ul class="nav justify-content-center border-bottom pb-3 mb-3">
+					<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+					<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+					<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+					<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+					<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+				</ul>
+				<p class="text-center text-muted">© 2021 Company, Inc</p>
+			</div>
+		</footer> -->
+
+		<!-- script -->
+		<script src="../js/bootstrap.bundle.min.js" tyle="text/javascript"></script>
+		<script src="../js/js.js"></script>
+	</body>
+</html>

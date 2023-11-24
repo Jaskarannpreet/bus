@@ -1,0 +1,335 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+  .BackgroundImage{
+    background-image: url(../../assets/img/1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+.RegistrationBox{
+    min-height: 1vh;
+    background-color: #eee2dccd;
+    padding: 30px;
+    margin: 15vh 0 ;
+    border-radius: 10px;
+
+
+}
+.Center{
+    text-align: center;
+}
+.BtnStyle{
+    width: 44%; 
+    margin: 10px;
+}
+label{
+    font-weight:bolder;
+}
+
+
+.SearchPageColor{
+    background-color: #eee2dc;
+}
+.SearchImage{
+    background-image: url(../../assets/img/1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   width: 100%;
+}
+.FromToBox{
+        min-height: 1vh;
+        background-color: #eee2dc;
+        padding: 30px;
+        margin: 10vh 0 ;
+        border-radius: 40px; 
+        box-shadow: 0px 0px 10px 1px;  
+}
+.FromToBoxBlack{
+    background-color: #000000ae;
+    height: auto;
+    padding: 100px 20px 70px 20px ;
+    margin: 30px 0;
+    color: #eee2dc;
+}
+.FromToButton{
+    width: 100%;
+    height: 50px;
+    
+}
+.InputHeigth{
+    height: 50px;
+    font-size: 20px;
+    width: 100%;
+    border: solid #123c69 2px;
+    background-color: transparent;
+}
+.HeaderColorStyle{
+    background-color: #eee2dc;
+    
+}
+.ListBox{
+    background-color: #edc7b7;
+    min-height: 200px;
+    margin: -100px 20px 20px 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 1px;  
+    padding: 25px;
+
+}
+
+.H3LineHight{
+    line-height: 70px;
+    color: #123c69;
+}
+
+
+
+/* nav */
+.topnav {
+    overflow: hidden;
+    background-color: #eee2dc;
+    float: right;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: #123c69;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 5px;
+  }
+  
+  .topnav a:hover {
+    background-color: #AC3b61;
+    color: #eee2dc;
+    margin: 5px;
+    border-radius: 30px;
+  }
+  
+  .topnav a.active {
+    background-color: #123c69 ;
+    color: #bab2b5;
+    border-radius: 0;
+    /* margin: 5px; */
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav a {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+  /* nav end */
+
+
+
+
+
+
+ 
+ /* Bus seats */
+
+/* body {
+    font-family: Arial, sans-serif;
+    background-image: url(../../assets/img/1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bus {
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.427);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid rgb(249, 179, 1);
+    
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    background-color: #bdc3c7;
+    border: 1px solid #34495e;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+.seat.selected {
+    background-color: #3498db;
+    border: 1px solid #2980b9;
+}
+
+button {
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lastsets{
+
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.lastone {
+    margin-top: 2%;
+    padding: 35px;
+}
+.booking-click{
+    width: 100%;
+    color: black;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+.booking-click:hover{
+    background-color: rgba(0, 128, 0, 0.655);
+} */
+
+ul{
+  list-style-type: none;
+  /* width: 50px; */
+  /* height: 100%; */
+}
+div li{
+  width: 97%;
+  height: 50px;
+  background-color: #eee2dcbc;
+  box-shadow: 0px 0px 10px 1px;  
+  padding: 10px;
+  margin: 15px 0;
+  font-size: 20px;
+
+}
+li input{
+  height: 30px;
+  width: 200px;
+  float: right;
+  background-color: #123c69;
+  border: none;
+  color: #ffffff;
+}
+
+
+/* bus seats */
+
+/* .bus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+} */
+.rows {
+  display: flex;
+  margin-bottom: 10px;
+}
+.seat {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #000;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.seat:hover{
+  background-color: green;
+}
+
+.bus-seats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+  
+
+.selected {
+  background-color: yellow; 
+}
+
+.booked {
+  background-color: red; 
+}
+
+.seatbox{
+  background-color: #000000c1;
+  min-height: 50px;
+  min-width: 50px;
+  padding: 100px;
+  text-align: center;
+  margin: 50px;
+}
+
+.bookbusbutton{
+  min-width: 30%;
+  height: 40px;
+  padding:8px;
+margin: 50px 15px;
+}
+
+
+
+/* invoice */
+  
+  .card {
+      box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+  }
+  .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: #fff;
+      background-clip: border-box;
+      border: 0 solid rgba(0,0,0,.125);
+      border-radius: 1rem;
+  }
