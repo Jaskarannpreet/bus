@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,33 +8,34 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/stylesheet.css">
 </head>
+
 <body onload="invoicedata()">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
                         <div class="invoice-title">
-                            <h4 class="float-end font-size-15">Invoice  <span
+                            <h4 class="float-end font-size-15">Invoice <span
                                     class="badge bg-success font-size-12 ms-2">Paid</span></h4>
                             <div class="mb-4">
                                 <h2 class="mb-1 text-muted"><span style="color: red;">Regbus</span>
                             </div>
-                            <div class="booking">
-                                <b><p class="mb-1">Thanks For Booking</p></p>
-                               
-                            </div>
+
                         </div>
-    
+
                         <hr class="my-4">
-    
+
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="text-muted">
                                     <h5 class="font-size-16 mb-3">Billed To:</h5>
                                     <h5 class="font-size-15 mb-2" id="invoicename"></h5>
-                                   
+                                    <p id="name"></p>
+                                    <p id="email"></p>
+
                                     <p mailto:class="mb-1" id="invoiceemail"></p>
-                                    
+
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -47,17 +49,16 @@
                                         <p style="color: black;" id="currentdate"></p>
                                     </div>
                                     <div class="mt-4">
-                                        <h5 class="font-size-15 mb-1" style="color: black;"
-                                        >Order No:</h5>
-                                        <p></p>
+                                        <h5 class="font-size-15 mb-1" style="color: black;">Order No:</h5>
+                                        <p id="orderno"></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-    
+
                         <div class="py-2">
                             <h5 class="font-size-15">Order Summary</h5>
-    
+
                             <div class="table-responsive">
                                 <table class="table align-middle table-nowrap table-centered mb-0">
                                     <thead>
@@ -65,51 +66,29 @@
                                             <th style="width: 70px;">S.No</th>
                                             <th>Bus Name</th>
                                             <th>Price</th>
-                                            <th>Booking Seats</th>
+                                            <th>No of Seats</th>
                                             <th class="text-end" style="width: 120px;">Total Amount</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th scope="row"></th>
-                                            
-                                        <tr>
-                                            <th scope="row" colspan="4" class="text-end">Sub Total</th>
-                                            <td class="text-end"></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" colspan="4" class="border-0 text-end">
-                                                Discount :</th>
-                                            <td class="border-0 text-end"></td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <th scope="row" colspan="4" class="border-0 text-end">
-                                                Shipping Charge :</th>
-                                            <td class="border-0 text-end"></td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <th scope="row" colspan="4" class="border-0 text-end">
-                                                Tax</th>
-                                            <td class="border-0 text-end"></td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <th scope="row" colspan="4" class="border-0 text-end">Total</th>
-                                            <td class="border-0 text-end">
-                                                <h4 class="m-0 fw-semibold"></h4>
-                                            </td>
-                                        </tr>
-                                        
+                                            <th scope="row">01.</th>
+                                            <td id="busname">RegBus transport</td>
+                                            <td id="price">abc</td>
+                                            <td id="bookingseats"></td>
+                                            <td id="total"></td>
+
+                          </tr>    
+
                                     </tbody>
                                 </table>
                             </div>
                             <div class="d-print-none mt-4">
-                                <div class="float-end">
-                                    <i
-                                            class="fa fa-print"></i></a>
-                                    <a href="#" class="btn btn-primary w-md">Send</a>
+                                <div class="booking Center">
+                                    <b>
+                                        <p class="mb-1">Thanks For Booking</p>
+                                        </p>
+
                                 </div>
                             </div>
                         </div>
@@ -118,24 +97,10 @@
             </div>
         </div>
     </div>
-
     
-    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <script src="../js/bootstrap.bundle.min.js" ></script>
     <script src="../js/js.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
   .BackgroundImage{
     background-image: url(../../assets/img/1.jpg);
     background-position: center;
@@ -65,7 +66,7 @@ label{
 }
 .InputHeigth{
     height: 50px;
-    font-size: 20px;
+    font-size: 12px;
     width: 100%;
     border: solid #123c69 2px;
     background-color: transparent;
@@ -247,7 +248,7 @@ div li{
   font-size: 20px;
 
 }
-li input{
+li button{
   height: 30px;
   width: 200px;
   float: right;
@@ -270,14 +271,17 @@ li input{
   margin-bottom: 10px;
 }
 .seat {
-  width: 80px;
-  height: 80px;
+  min-width: 10vw;
+  min-height: 4vh;
   border: 1px solid #000;
-  margin-right: 10px;
+  margin-right: 4vh ;
+  margin-left: 4vh ;
+  margin-top: 4vh ;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
+ 
 }
 .seat:hover{
   background-color: green;
@@ -286,7 +290,6 @@ li input{
 .bus-seats {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
 }
 
   
@@ -303,9 +306,9 @@ li input{
   background-color: #000000c1;
   min-height: 50px;
   min-width: 50px;
-  padding: 100px;
+  padding: 50px;
   text-align: center;
-  margin: 50px;
+  margin: 50px 0;
 }
 
 .bookbusbutton{

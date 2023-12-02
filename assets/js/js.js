@@ -1,4 +1,5 @@
-
+let userEmail = "";
+let seatprice = "";
 
 
 // nav function
@@ -16,9 +17,11 @@ function myFunction() {
 
 function storedata(){
   let name = document.getElementById('name').value;
+  let nemecapital = name.charAt(0)
   let email = document.getElementById('email').value;
   let phoneno = document.getElementById('phoneno').value;
   let password = document.getElementById('password').value;
+  let confirmpassword  = document.getElementById('confirmpassword').value;
   let lowerCaseLetters = /[a-z]/g;
   let upperCaseLetters = /[A-Z]/g;
   let numbers = /[0-9]/g;
@@ -27,48 +30,101 @@ function storedata(){
   let phonenolength = phoneno.length;
   
 
-  if(name.length == 0){
-      alert('Please fill in your name');
+  if(name.length == 0 && email.length == 0 && phonenolength == 0 && getpasswordlength == 0 && confirmpassword.length == 0){
+    document.getElementById('name').style.border = '2px solid red'
+    document.getElementById('namevalidation').innerHTML = 'Please enter your name'
+    
+    document.getElementById('email').style.border = '2px solid red'
+    document.getElementById('emailvalidation').innerHTML = 'Please enter your Email'
+
+    document.getElementById('phoneno').style.border = '2px solid red'
+    document.getElementById('phonenovalidation').innerHTML = 'Please enter your Phone no.'
+
+    document.getElementById('password').style.border = '2px solid red'
+    document.getElementById('passwordvalidation').innerHTML = 'Please enter your Password'
+
+    document.getElementById('confirmpassword').style.border = '2px solid red'
+    document.getElementById('confirmpasswordvalidation').innerHTML = 'Please enter your Confirm password'
+
+
+  }
+  else if(name.length == 0){
+    document.getElementById('name').style.border = '2px solid red'
+    document.getElementById('namevalidation').innerHTML = 'Please enter your name.'
+  }
+
+  else if(!nemecapital.match(upperCaseLetters)){
+    
+
+    document.getElementById('name').style.border = '2px solid red'
+    document.getElementById('namevalidation').innerHTML = 'Your name should start form Capital latter.'
 
   }
   else if(email.length == 0){
-    alert('Please fill in email');
+    document.getElementById('name').style.border = 'none'
+    document.getElementById('email').style.border = '2px solid red'
+    document.getElementById('emailvalidation').innerHTML = 'Please enter your Email'
 
   }
-  else if(phonenolength == 10){
-    alert('please enter valid phone number');
-  
+  else if(phoneno.length == 9){
+    document.getElementById('email').style.border = 'none'
+
+    document.getElementById('phoneno').style.border = '2px solid red'
+    document.getElementById('phonenovalidation').innerHTML = 'Please enter your Phone no.'
+
     }
   else if(password.length == 0){
-      alert('Please fill in password');
+    document.getElementById('Password').style.border = 'none'
+
+    document.getElementById('password').style.border = '2px solid red'
+    document.getElementById('passwordvalidation').innerHTML = 'Please enter your Password'
 
   }
   else if(email.length == 0 && password.length == 0){
-      alert('Please fill in email and password');
+    document.getElementById('password').style.border = '2px solid red'
+    document.getElementById('passwordvalidation').innerHTML = 'Please enter your Password'
+    document.getElementById('email').style.border = '2px solid red'
+    document.getElementById('emailvalidation').innerHTML = 'Please enter your Password'
 
   }
   
-  else if(getpasswordlength < 7){
-      alert('min of 8');
+  else if(getpasswordlength < 8){
+    document.getElementById('password').style.border = '2px solid red'
+    document.getElementById('passwordvalidation').innerHTML = 'Minimum 8 characters required'
+  
 
   }
   else if(!password.match(numbers)){
-      alert('please use 1 number in password');
+    document.getElementById('password').style.border = '2px solid red'
+    document.getElementById('passwordvalidation').innerHTML = 'atlast 1 No. required'
+  
 
   }
   else if(!password.match(upperCaseLetters)){
-      alert('please use 1 uppercase letter in password');
+    document.getElementById('password').style.border = '2px solid red'
+    document.getElementById('passwordvalidation').innerHTML = 'atlast 1 Uppercase letter required'
 
   }
   else if(!password.match(lowerCaseLetters)){
-      alert('please use 1 lovercase letter in your password');
+    document.getElementById('password').style.border = '2px solid red'
+    document.getElementById('passwordvalidation').innerHTML = 'atlast 1 Lowercase letter required'
 
   }
   else if(!password.match(specialcharacter)){
-    alert('please use at least 1 special character in your password');
+    document.getElementById('password').style.border = '2px solid red'
+    document.getElementById('passwordvalidation').innerHTML = 'atlast 1 special character required'
+
+  }
+  else if(password != confirmpassword){
+    document.getElementById('password').style.border = 'none'
+
+    document.getElementById('confirmpassword').style.border = '3px solid red'
+    document.getElementById('passwordvalidation').innerHTML = 'Password did not match'
+    
 
   }
   else{
+    document.getElementById('confirmpassword').style.border = 'none'
 
     let storedata = JSON.parse(localStorage.getItem('formdata')) || [];
 
@@ -125,18 +181,26 @@ document.getElementById('registerform').reset()
 function loginform(){
   const email = document.getElementById('loginemail').value;
   const password = document.getElementById('loginpassword').value;
+  localStorage.setItem('userEmail', email);
 
   const storedatar = JSON.parse(localStorage.getItem('formdata')) || [];
   
-  const user = storedatar.find(data => data.email === email);
+  const user = storedatar.find(data => data.email == email);
 
   if(user && user.password === password){
+    
+    document.getElementById('loginemail').style.border = 'none'
+    document.getElementById('loginpassword').style.border = 'none'
     alert('Login successful')
-    window.location.href = '../assignmentbus/assets/pages/bussearch.html';
+    window.location.href = '../bus/assets/pages/bussearch.html';
 
   }
   else{
-    alert('invalid email/phone no or password. please try again.');
+    // alert('invalid email/phone no or password. please try again.');
+    document.getElementById('loginemail').style.border = '3px solid red'
+    document.getElementById('loginpassword').style.border = '3px solid red'
+
+    document.getElementById('validatelogin').innerHTML = 'enter valid password or email.'
   }
 }
 
@@ -184,25 +248,51 @@ function searchbuses() {
   const to = document.getElementById('to').value
   const date = document.getElementById('date').value
 
+  if(from == "" && to == "" && date == ""){
+    document.getElementById('from').style.border = '3px solid red'
+    document.getElementById('to').style.border = '3px solid red'
+    document.getElementById('date').style.border = '3px solid red'
+  }
+  else if(from == ""){
+    document.getElementById('from').style.border = '3px solid red'
+
+  }
+  else if(to == ""){
+    document.getElementById('from').style.borderColor = 'blue'
+
+    document.getElementById('to').style.border = '3px solid red'
+
+  }
+  else if(date == ""){
+    document.getElementById('to').style.borderColor = 'blue'
+    document.getElementById('date').style.border = '3px solid red'
+  }
+  else
+  {
+    document.getElementById('date').style.borderColor = 'blue'
+    document.getElementById('from').style.borderColor = 'blue'
+
+    document.getElementById('to').style.borderColor = 'blue'
+
+
   const busData = getBusData(from, to, date)
 
   displayBusList(busData)
-}
 
 function getBusData(from, to, date) {
   const buses = [
-    {from: 'Assam', to: 'Delhi', time: '10;00 AM'},
-    {from: 'Assam', to: 'Himachal', time: '10;00 pM'},
-    {from: 'Chandigarh', to: 'Delhi', time: '12;00 pM'},
-    {from: 'Chandigarh', to: 'Delhi', time: '02;00 AM'},
-    {from: 'Assam', to: 'Delhi', time: '09;00 pM'},
-    {from: 'Assam', to: 'Himachal', time: '08;00 AM'},
-    {from: 'Chandigarh', to: 'Delhi', time: '04;00 pM'},
-    {from: 'Chandigarh', to: 'Uttrakhand', time: '06;00 AM'},
-    {from: 'Assam', to: 'Himachal', time: '01;00 pM'},
-    {from: 'Assam', to: 'Uttrakhand', time: '12;00 AM'},
-    {from: 'Chandigarh', to: 'Uttrakhand', time: '11;00 pM'},
-    {from: 'Assam', to: 'Delhi', time: '01;00 pM'}
+    {from: 'Assam', to: 'Delhi', time: '10;00 AM', prise: '200'},
+    {from: 'Assam', to: 'Himachal', time: '10;00 pM', prise: '300'},
+    {from: 'Chandigarh', to: 'Delhi', time: '12;00 pM', prise: '200'},
+    {from: 'Chandigarh', to: 'Delhi', time: '02;00 AM', prise: '200'},
+    {from: 'Assam', to: 'Delhi', time: '09;00 pM', prise: '200'},
+    {from: 'Assam', to: 'Himachal', time: '08;00 AM', prise: '300'},
+    {from: 'Chandigarh', to: 'Delhi', time: '04;00 pM', prise: '200'},
+    {from: 'Chandigarh', to: 'Uttrakhand', time: '06;00 AM', prise: '300'},
+    {from: 'Assam', to: 'Himachal', time: '01;00 pM', prise: '300'},
+    {from: 'Assam', to: 'Uttrakhand', time: '12;00 AM', prise: '200'},
+    {from: 'Chandigarh', to: 'Uttrakhand', time: '11;00 pM', prise: '300'},
+    {from: 'Assam', to: 'Delhi', time: '01;00 pM', prise: '200'}
   ]
 
   const filteredBuses = buses.filter((bus) => bus.from === from && bus.to === to)
@@ -222,23 +312,29 @@ function displayBusList(busData) {
   const ul = document.createElement('ul')
   busData.forEach((bus) => {
     const li = document.createElement('li')
-    const input = document.createElement('input')
+    const input = document.createElement('button')
     input.setAttribute("id", "booknow");
-    input.setAttribute("type", "button");
     input.setAttribute("onclick", "booknow()");
-    input.value = 'Book Now'
-    li.textContent = `From: ${bus.from}, To: ${bus.to}, Time: ${bus.time}`
+    input.value = `${bus.prise}`
+    input.textContent = 'Book Now'
+    li.textContent = `From: ${bus.from}, To: ${bus.to}, Time: ${bus.time}, Prise: ${bus.prise}`
     ul.appendChild(li)
-    
     li.appendChild(input)
+
   })
           
   busListDiv.appendChild(ul)
 }
+}
+}
+
 
 function booknow(){
+  seatprice = document.getElementById('booknow').value
+localStorage.setItem('seatprice', seatprice);
   window.location.href = '../pages/pages.html'
 }
+
 
 
 
@@ -260,6 +356,7 @@ let selectedSeats = []
 					if (seatStatus[i] === 'booked') {
 						seatButton.classList.add('booked')
 						seatButton.disabled = true
+            
 					} else if (selectedSeats.includes(i)) {
 						seatButton.classList.add('selected')
 					} else {
@@ -276,11 +373,23 @@ let selectedSeats = []
 					selectedSeats.push(seatNumber)
 					seatStatus[seatNumber] = 'selected'
 					displayAvailableSeats()
-				}
+  				}
+        else
+        {
+          alert("you can only select minimum 2 seats and max 5 seats")
+        }
 			}
 
 			function confirmSeats() {
-				if (selectedSeats.length >= 2 && selectedSeats.length <= 5) {
+userEmail = localStorage.getItem('userEmail');
+console.log(userEmail)
+        if(userEmail == null)
+        {
+alert("please Register or Login before booking Bus Tickets")
+window.location.href = '../pages/registration.html'
+console.log(userEmail)
+        }
+				else if (selectedSeats.length >= 2 && selectedSeats.length <= 5) {
 					
 					console.log('Selected seats:', selectedSeats)
 
@@ -308,13 +417,57 @@ let selectedSeats = []
 
 
 			displayAvailableSeats()
-
+    
 
 
       // invoice code
 function invoicedata(){
+
+console.log(userEmail)
+  
       let invoicedata = JSON.parse(localStorage.getItem('formdata'))
+      let seatbooked = JSON.parse(localStorage.getItem('seatStatus'))
+      let lastseatprice = JSON.parse(localStorage.getItem('seatprice'))
+
 // let invoiceemail = invoicedata.get(email).value
-console.log(invoicedata);
-document.getElementById('invoiceemail').innerHTML = invoiceemail
+// console.log(invoicedata[0].email);
+userEmail = localStorage.getItem('userEmail');
+const randomNumber = Math.floor(Math.random() * 1000);
+const paddedNumber = randomNumber.toString().padStart(3, '0');
+  const remainingDigits = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+  const finalNumber = paddedNumber + remainingDigits;
+const currentdate = new Date();
+const date = currentdate.getDate().toString();
+const month = currentdate.getMonth().toString();
+const year = currentdate.getFullYear().toString();
+const orderno = document.getElementById('orderno').innerHTML = randomNumber;
+  
+
+for( let i = 0; i < invoicedata.length; i++)
+
+{
+  if(invoicedata[i].email === userEmail)
+  {
+    console.log(invoicedata[i].email);
+    document.getElementById('name').innerHTML = invoicedata[i].name
+    document.getElementById('email').innerHTML = invoicedata[i].email
+    document.getElementById('invoiceno').innerHTML = finalNumber;
+    document.getElementById('currentdate').innerHTML = date + "/" + month + "/" +  year;
+    
+    const keys = Object.keys(seatbooked);
+    document.getElementById('bookingseats').innerHTML = 'X ' + keys.length
+    document.getElementById('price').innerHTML = lastseatprice
+    let totalprice = keys.length * lastseatprice;
+    document.getElementById('total').innerHTML = totalprice
+    
+    localStorage.removeItem('userEmail');
+    
+  }
+  else{
+    localStorage.removeItem('userEmail');
+
+
+  }
+}
+// document.getElementById('invoiceemail').innerHTML = invoiceemail
 }    

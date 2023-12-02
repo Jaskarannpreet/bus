@@ -40,10 +40,11 @@
 									<input
 										type="text"
 										class="form-control"
-										placeholder="Enter Your Name"
+										placeholder="Enter Your Full Name"
 										id="name"
 										required
 									/>
+									<span id="namevalidation"></span>
 								</div>
 
 								<!--  -->
@@ -60,6 +61,8 @@
 										placeholder="abc@mail.com"
 										required
 									/>
+									<span id="emailvalidation"></span>
+
 									<!-- <small id="emailHelpId" class="form-text text-muted">Help text</small> -->
 								</div>
 								<div class="mb-3">
@@ -72,6 +75,8 @@
 										placeholder="Enter your Phone No"
 										required
 									/>
+									<span id="phonenovalidation"></span>
+									
 								</div>
 								<div class="mb-3">
 									<label for="" class="form-label">Password</label>
@@ -83,6 +88,21 @@
 										placeholder="Enter your Password"
 										required
 									/>
+									<span id="passwordvalidation"></span>
+
+								</div>
+								<div class="mb-3">
+									<label for="" class="form-label">Confirm Password</label>
+									<input
+										type="password"
+										class="form-control"
+										name=""
+										id="confirmpassword"
+										placeholder="Enter your Confirm Password"
+										required
+									/>
+									<span id="confirmpasswordvalidation"></span>
+
 								</div>
 								<div class="Center mb-3">
 									<button type="button" class="btn btn-primary BtnStyle" onclick="storedata()">
@@ -107,7 +127,7 @@
 			</div>
 		</section>
 		<!-- script -->
-		<script src="../js/bootstrap.bundle.min.js" tyle="text/javascript"></script>
+		<script src="../js/bootstrap.bundle.min.js"  tyle="text/javascript"></script>
 		<script src="../../assets/js/js.js"></script>
 	</body>
 </html>
